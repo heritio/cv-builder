@@ -51,3 +51,8 @@
    width: 80%;
    height: max-content;
 }
+
+.title{
+  text-align: center;
+  font-weight: 900;
+}

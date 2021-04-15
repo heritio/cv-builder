@@ -5,7 +5,7 @@ const theme = createMuiTheme({
     overrides: {
         MuiTextField: {
             root: {
-                margin: "10px",
+                margin: "20px",
             },
             
         },
@@ -16,8 +16,9 @@ const theme = createMuiTheme({
         MuiTextField:{
             variant:"outlined",
             InputLabelProps: {
-                shrink: true,
-            }
+                shrink: true
+            },
+            
         }
     }
 });

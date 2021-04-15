@@ -2,8 +2,6 @@
 import React, { Component } from 'react'
 import {  ThemeProvider } from '@material-ui/core/styles';
 
-
-
 import './App.css';
 import theme from "./component/theme";
 
@@ -19,22 +17,36 @@ class App extends Component {
      super(props)
    
      this.state = {
+        general: {
+          name: "",
+          email: "",
+          phoneNr: ""
+        },
+        ourPractical: [],
+        ourEducational: []
         
      }
+    
    }
    
-
+  onSubmit = (key, val) => {
+    this.setState({[key]: val})
+  };
+  
+ 
   render() {
+    
     return (
       <ThemeProvider theme={theme}>
       <div id="container">
+        <h1 className ="title">CV Builder</h1>
+        <h2 className ="title">Write CV and download in PDF format</h2>
         <div className="space bgcolor">
-          <labe></labe>
           <Educational  id="educational"/>
-          <GeneralInfo id="general"/>
+          <GeneralInfo  submit={this.onSubmit} id="general" value={this.state}/>
         </div>
           <Practical className="bgcolor" id="practical" />
-          <Cvpaper id="cvpaper"/>       
+          <Cvpaper name={this.state.name} email={this.state.email} phone={this.state.phoneNr} id="cvpaper"/>       
       </div>
       </ThemeProvider>
     )
