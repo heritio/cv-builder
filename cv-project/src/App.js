@@ -1,13 +1,18 @@
-import FormGroup from '@material-ui/core/FormGroup';
+
+import React, { Component } from 'react'
+import {  ThemeProvider } from '@material-ui/core/styles';
+
+
+
 import './App.css';
+import theme from "./component/theme";
 
 import Educational from "./component/educational";
 import GeneralInfo from "./component/general";
 import Practical from "./component/practical";
 import Cvpaper from "./component/cvpaper";
 
-import React, { Component } from 'react'
-import { Grid } from '@material-ui/core';
+
 
 class App extends Component {
    constructor(props) {
@@ -21,13 +26,17 @@ class App extends Component {
 
   render() {
     return (
-      <Grid container  justify={"center"} alignItems={"center"} zeroMinWidth={true}>
-      
-          <Educational />
-          <GeneralInfo />
-          <Practical />
-          <Cvpaper />       
-      </Grid>
+      <ThemeProvider theme={theme}>
+      <div id="container">
+        <div className="space bgcolor">
+          <labe></labe>
+          <Educational  id="educational"/>
+          <GeneralInfo id="general"/>
+        </div>
+          <Practical className="bgcolor" id="practical" />
+          <Cvpaper id="cvpaper"/>       
+      </div>
+      </ThemeProvider>
     )
   }
 }

@@ -1,15 +1,26 @@
-import TextField from '@material-ui/core/TextField';
 
 import React from 'react'
-import "./Components.css"
+import TextField from '@material-ui/core/TextField';
+
+import "./components.css";
 function Practical(props) {
+    
+    const inputs3 = [
+        {InputPlaceholder: "Company Name",
+         type:"text"},
+         {InputPlaceholder: "Position Tittle",
+         type:"text"},
+         {InputPlaceholder: "Description Of Work", 
+        type:"textarea"},
+         {InputPlaceholder: "Start-Date",
+         type:"date"},
+        {InputPlaceholder: "End-Date", 
+        type:"date"}
+    ]
     return (
-        <div>
-            <TextField placeholder="Company Name"></TextField>
-            <TextField placeholder="Position Tittle"></TextField>
-            <TextField placeholder="Description of job"></TextField>
-            <TextField placeholder="Start-Date"></TextField>
-            <TextField placeholder="End-Date"></TextField>
+        <div id="practical-section">
+            <h2>Practical</h2>
+            {inputs3.map(({InputPlaceholder, type}) => <TextField type={type} Placeholder={InputPlaceholder} />)}
         </div>
     )
 }

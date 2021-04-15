@@ -1,23 +1,27 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Paper from '@material-ui/core/Paper';
-import "./Components.css";
+
+import "./components.css";
 
 function Cvpaper(props) {
     return (
-        <>
-            <Paper>
-               <div id="cvheader">Header</div>
-               <div id="maininfo">Main</div>
-               <div id="sidetab">sidetab</div>
-            </Paper>
-        </>
+        <div className="cv-space"> 
+               <div id="cv-header">
+                 Heritier Akilimali  
+               </div>
+               <div  className="info-section">
+                   <div id="main-info" >
+
+                   </div>
+                  
+                  <div id="side-tab">
+                  </div>  
+               </div>
+              
+          
+        </div>
     )
 }
 
-Cvpaper.propTypes = {
-
-}
 
 export default Cvpaper;
 

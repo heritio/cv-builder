@@ -1,16 +1,25 @@
 
 
 import React from 'react'
-import "./Components.css"
+import "./components.css"
 import TextField from '@material-ui/core/TextField';
 
 
 export default function GeneralInfo() {
+    const inputs2 = [
+    
+        {InputPlaceholder: "Name",
+         type:"text"},
+         {InputPlaceholder: "Email",
+         type:"email"},
+         {InputPlaceholder: "Phone Number",
+         type:"number"}
+        
+        ]
     return (
-        <div>
-            <TextField placeholder="Name"></TextField>
-            <TextField placeholder="Email"></TextField>
-            <TextField placeholder="Phone Number"></TextField>
+        <div id="general-section">
+            <h2>General Info</h2>
+            {inputs2.map(({InputPlaceholder, type}) => <TextField type={type} Placeholder={InputPlaceholder} />)}
         </div>
     )
 }
